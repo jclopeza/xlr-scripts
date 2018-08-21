@@ -1,1 +1,1 @@
-print("que pasa amigo!")
+print "que pasa amigo!"
