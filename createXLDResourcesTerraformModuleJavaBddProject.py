@@ -17,9 +17,6 @@ print("Instance Type = {0}".format(instanceType))
 print("Private Key Path = {0}".format(privateKeyPath))
 print("Public Key Path = {0}".format(publicKeyPath))
 
-environment = sys.argv[1]
-projectName = sys.argv[2]
-
 # Funciones para la creación de recursos
 def createDirectory(directory):
     if not repository.exists(directory):
