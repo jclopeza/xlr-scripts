@@ -7,6 +7,8 @@ environment = sys.argv[1]
 projectName = sys.argv[2]
 awsRegion = sys.argv[3]
 instanceType = sys.argv[4]
+versionTerraform = sys.argv[5]
+versionAnsible = sys.argv[6]
 
 t = Template("""
 <html>
@@ -48,6 +50,15 @@ t = Template("""
             <img src="graph.svg" width="80%">
           </td>
         </tr>
+
+        <tr>
+          <td width="20%" align=center>
+          </td>
+          <td width="80%" align=left>
+            <b>Versión de infraestructura aplicacda: </b>{{ versionTerraform }}<br>
+            <b>Versión de Playbooks de Ansible: </b>{{ versionAnsible }}<br>
+          </td>
+        </tr>
       </table>
     </p>
   </body>
@@ -60,7 +71,9 @@ htmlGenerated = t.render(
     awsRegion=awsRegion,
     instanceType=instanceType,
     date=x.strftime("%d/%m/%Y"),
-    hour=x.strftime("%H:%M:%S")
+    hour=x.strftime("%H:%M:%S"),
+    versionTerraform = versionTerraform,
+    versionAnsible = versionAnsible
     )
 f = open("/var/www/html/{0}-{1}/index.html".format(projectName, environment), "w")
 f.write(htmlGenerated)
