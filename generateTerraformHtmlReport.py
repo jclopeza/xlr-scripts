@@ -55,8 +55,8 @@ t = Template("""
           <td width="20%" align=center>
           </td>
           <td width="80%" align=left>
-            <b>Versión de infraestructura aplicacda: </b>{{ versionTerraform }}<br>
-            <b>Versión de Playbooks de Ansible: </b>{{ versionAnsible }}<br>
+            <b>Version de infraestructura aplicada: </b>{{ versionTerraform }}<br>
+            <b>Version de Playbooks de Ansible: </b>{{ versionAnsible }}<br>
           </td>
         </tr>
       </table>
